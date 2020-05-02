@@ -1,0 +1,22 @@
+//Problem  : Happy number
+//Approach : 1. Set high value for loop, and find if n is happy or not
+//Mistakes : None
+//Code :
+class Solution {
+public:
+    bool isHappy(int n) {
+        int i=0;
+        while(i++<10000)
+        {   if(n==1)
+              return true;
+            int t = n;
+            n = 0;
+            while(t)
+            {
+                n += (t%10)*(t%10);
+                t/=10;
+            }
+        }
+        return false;
+    }
+};
