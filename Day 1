@@ -1,0 +1,9 @@
+//Problem : Single number (find number in array that appears only once)
+//Approaches : 1. Sort array and perform comparison ; TC: O(nlogn) SC : O(1)
+               2. Use XOR operations (a^a=0 ; a^0=0; final XOR will contain answer) : TC : O(n) and SC : O(1)
+//Mistakes : 1. Loop check (+=2) ; nums.length() did not work so used nums.size() instead
+//Code : 
+sort(nums.begin(), nums.end())
+for(int i=1;i<nums.size();i+=2)
+  if(nums[i]!=nums[i-1])
+    return nums[i]
