@@ -1,0 +1,20 @@
+//Problem : Move zeroes
+//Approaches : 1. Sort and move zeros : TC - O(nlogn) and SC - O(1)
+               2. Move directly using 2 pointers : TC : O(1) and SC - O(1)
+//Mistakes : 2. Forgot to fill up the remaining array with zeros
+//Code : 
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int i=0, j=0;
+        while(j<nums.size())
+        {
+            if(!nums[j])
+                j++;
+            else
+                nums[i++] = nums[j++];
+        }
+        while(i<nums.size())
+            nums[i++] = 0;
+    }
+};
